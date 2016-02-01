@@ -1,3 +1,3 @@
-# Call, Apply and Prototype & Interaction
+# Call & Apply
 
 A little bit about aplying these stuff above.
