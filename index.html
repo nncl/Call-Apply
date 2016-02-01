@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <style type="text/css">
+        * {
+            font-family: sans-serif;
+            text-align: center;
+        }
+    </style>
+<head>
+    <title>Hello JS</title>
+</head>
+<body>
+    <h1>Call & Apply</h1>
+    <p>Check the console.</p>
+    <script type="text/javascript">
+    // Call & Apply
+    // 1st function
+
+    var someFun = function(obj,cb) {
+        cb.call(obj);
+        return 1;
+    };
+
+    var result = someFun({someProperty : 'interview'}, function(){
+        console.log('This is pointing to', this );
+    });
+
+    console.log('Result is', result);
+
+    // W/ apply
+    var someFunA = function(obj,cb,params) {
+        cb.apply(obj,params);
+        return 1;
+    };
+
+    var resultA = someFunA({somePropertyA : 'interviewA'}, function(param1, param2){
+        console.log('This is pointing to', this );
+        console.log('1st param is', param1 );
+        console.log('2nd param is', param2 );
+    }, ['cool', 'interview']);
+
+    console.log('Result w/ apply is', resultA);
+    </script>
+</body>
+</html>
